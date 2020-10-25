@@ -29,7 +29,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
 	//i immediately changed this before i pushed to the database.
-	res.send(database.users);
+	res.send("it is working");
 });
 
 //signIn route
@@ -62,8 +62,8 @@ app.post("/imageurl", (req, res) => {
 });
 
 //the port the server is running on
-app.listen(3001, () => {
-	console.log("app is running on port 3001");
+app.listen(proecess.env.PORT || 3001, () => {
+	console.log('app is running on port $(process.env.PORT)');
 });
 
 /*
